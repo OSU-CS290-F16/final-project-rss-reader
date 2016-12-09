@@ -1,0 +1,39 @@
+var parser = require("rss-to-json");
+
+
+var rssFeeder = {
+	parse: function(feeds) {
+		var jsonTemp = {};
+		var output = {
+			articles: []
+		};
+
+		for (var feed of feeds) {
+			jsonTemp[feed] = new Promise(function (resolve, reject) {
+				resolve(parser.load(feed, function (err, rss) {
+					if (err) {
+						return null;
+					} else {
+						return rss;
+					}
+				}));
+				reject("Error with Promise");
+			});
+
+
+			for (var article of jsonTemp[feed].items) {
+				article["source"] = jsonTemp["title"];
+			}
+		}
+
+		for (var site of jsonTemp) {
+			output["articles"] += site["items"];
+		}
+
+		return output.sort(function (a, b) {
+			return a.created - b.created;
+		});
+	}
+};
+
+module.exports = rssFeeder;

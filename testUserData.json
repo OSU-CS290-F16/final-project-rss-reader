@@ -1,0 +1,37 @@
+{
+	"gangwerz": {
+		"name": "gangwerz",
+		"first": "Zach",
+		"last": "Gangwer",
+		"password": "password",
+		"subscriptions": [
+			"NFL.com",
+			"ProFootballTalk"
+		]
+	},
+	"jonesd": {
+		"name": "jonesd",
+		"first": "Davey",
+		"last": "Jones",
+		"password": "jonesd",
+		"subscriptions": [
+			"NFL.com",
+		]
+	},
+	"smiths": {
+		"name": "smiths",
+		"first": "Sam",
+		"last": "Smith",
+		"password": "smiths",
+		"subscriptions": [
+			"ProFootballTalk"
+		]
+	},
+	"ambrosn": {
+		"name": "ambrosn",
+		"first": "Nihar",
+		"last": "Ambros",
+		"password": "ambrosn",
+		"subscriptions": []
+	},
+}

@@ -41,7 +41,7 @@ app.get("/feed/:user", function (req, res, next) {
 	if (userData) {
 		res.render("feed-page", {
 			title: "Readdit - " + userData.name,
-			articles: rss.parse(userData.subscriptions),
+			feeds: rss.parse(userData.subscriptions),
 			userName: userData.name
 		});
 	} else {
@@ -53,7 +53,7 @@ app.get("/feed/:user", function (req, res, next) {
 // Return a 404 and render the 404 page for any other route.
 app.get("*", function (req, res) {
 	res.status(404).render("404-page", {
-		title: "ToDoIt"
+		title: "Readdit"
 	});
 });
 

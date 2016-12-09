@@ -1,4 +1,11 @@
 {
+	"guest": {
+		"name": "guest",
+		"subscriptions": [
+			"NFL.com",
+			"ProFootballTalk"
+		]
+	},
 	"gangwerz": {
 		"name": "gangwerz",
 		"first": "Zach",
@@ -15,7 +22,7 @@
 		"last": "Jones",
 		"password": "jonesd",
 		"subscriptions": [
-			"NFL.com",
+			"NFL.com"
 		]
 	},
 	"smiths": {
@@ -32,6 +39,6 @@
 		"first": "Nihar",
 		"last": "Ambros",
 		"password": "ambrosn",
-		"subscriptions": []
-	},
+		"subscriptions": false
+	}
 }

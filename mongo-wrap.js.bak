@@ -1,0 +1,32 @@
+// => Mongo Imports
+var MongoClient = require("mongodb").MongoClient;
+var mongoHost = process.env.MONGO_HOST;
+var mongoPort = process.env.MONGO_PORT || 27017;
+var mongoUser = process.env.MONGO_USER;
+var mongoPassword = process.env.MONGO_PASSWORD;
+var mongoDBName = process.env.MONGO_DB;
+var mongoURL = "mongodb://" + mongoUser + ":" + mongoPassword + "@" + mongoHost + ":" + mongoPort + "/" + mongoDBName;
+var mongoDB;
+
+var mongoWrap = {
+	connect: function () {
+		var db = MongoClient.connect(mongoURL, function (err, db) {
+			if(!err) {
+				console.log("==> Connected to MongoDB");
+				return db;
+			}
+		});
+		return db;
+	},
+	insert: function (collect, item) {
+		var collection = mongoDB.collection(collect);
+
+		for (var eye in item) {
+			collection.insert(eye, function (err, records) {
+				console.log("Record added as: " + records[0]._id);
+			});
+		}
+	}
+};
+
+module.exports = mongoWrap;

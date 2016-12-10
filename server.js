@@ -38,7 +38,6 @@ app.get("/", function (req, res) {
 */
 app.get("/feed-page", function (req, res, next) {
 	var userData = mongo.query("guest");
-	console.log("Logged in as: " + userData.name + "\n -> Subscriptions are:\n" + userData.subscriptions);
 
 	if (userData) {
 		res.render("feed-page", {
@@ -58,7 +57,6 @@ app.get("/feed-page", function (req, res, next) {
  */
 app.get("/feed-page/:user", function (req, res, next) {
 	var userData = mongo.query(req.params.user);
-	console.log("Logged in as: " + userData.name + "\n -> Subscriptions are:\n" + userData.subscriptions);
 
 	if (userData) {
 		res.render("feed-page", {
@@ -79,7 +77,7 @@ app.get("/feed-page/:user", function (req, res, next) {
 * => Valid Username -> Add Feed to Users Subscriptions
 * => Else -> Error MSG
 */
-app.post("/feed-page/:user/add-feed", function (req, res, next) {
+app.post("/feed-page/:user/add-feed", function (req, res) {
 	if (req.body) {
 		var newFeed = req.body;
 		var userData = mongo.query(req.params.user);

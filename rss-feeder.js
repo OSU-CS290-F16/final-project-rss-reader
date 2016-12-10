@@ -16,11 +16,9 @@ var rssFeeder = {
 			}
 		}
 
-		return output;
-
-		// return output.sort(function (a, b) {
-		// 	return a.pubDate - b.pubDate;
-		// });
+		return output.sort(function (a, b) {
+			return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
+		});
 	}
 };
 

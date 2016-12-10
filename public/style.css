@@ -1,10 +1,10 @@
 body {
-  font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  margin: 0;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	margin: 0;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 header {
@@ -96,47 +96,56 @@ main {
   min-height: 300px;
 }
 
-.article {
-  background-color: #fffe6e;
+a:active .rss-article {
+	background-color: rgba(#b55b5b, 0.6);
+}
+
+.rss-article {
+  background-color: white;
   position: relative;
-  width: 300px;
+  width: 70%;
   min-height: 300px;
   margin: 20px;
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 24px;
   font-weight: 200;
+  color: black;
   word-wrap: break-word;
+  border-radius: 25px;
+  border-color: #d6d6d6;
+  border-style: solid;
+  box-shadow: 10px 10px 5px #888888;
 }
 
-.article h2 {
+.rss-article h2 {
   margin: 20px;
   text-align: center;
 }
 
-.article-body {
+.rss-article-body {
   padding: 0 20px
 }
 
-.article-list {
+.rss-article-list {
   list-style-type: circle;
 }
 
-.article p {
+.rss-article p {
   margin: 15px 0;
 }
 
-.article p.indent-wrapped {
+.rss-article p.indent-wrapped {
   padding-left: 50px;
   text-indent: -50px;
 }
 
-.article .when,
-.article .where,
-.article .who {
+.rss-article .when,
+.rss-article .where,
+.rss-article .who {
   font-weight: bold;
 }
 
-.article .dismiss-button {
+.rss-article .dismiss-button {
   font-family: sans-serif;
   position: absolute;
   top: 0;
@@ -146,36 +155,36 @@ main {
   cursor: pointer;
 }
 
-.article:hover .dismiss-button {
+.rss-article:hover .dismiss-button {
   display: initial;
 }
 
-.article-input-element {
+.rss-article-input-element {
   display: flex;
   align-items: center;
   font-size: 20px;
   margin: 10px 0;
 }
 
-.article-input-element label {
+.rss-article-input-element label {
   font-weight: 600;
   flex: 1 75px;
   margin-right: 10px;
 }
 
-.article-input-element input,
-.article-input-element textarea {
+.rss-article-input-element input,
+.rss-article-input-element textarea {
   flex: 6 200px;
   padding: 8px;
   font-size: 20px;
   border: 1px solid #aaa;
 }
 
-.article-input-element textarea {
+.rss-article-input-element textarea {
   min-height: 64px;
 }
 
-.article-input-element.required label::after {
+.rss-article-input-element.required label::after {
   content: ' *';
   color: red;
 }

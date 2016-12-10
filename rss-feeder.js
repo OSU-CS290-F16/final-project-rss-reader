@@ -12,9 +12,8 @@ var rssFeeder = {
 			}
 
 			for (var item of currentFeed["items"]) {
-				output += item;
+				output.push(item);
 			}
-			console.log(output.description);
 		}
 
 		return output;
